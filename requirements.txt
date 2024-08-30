@@ -1,0 +1,6 @@
+discord.py
+feedparser
+python-dotenv
+aiofiles
+requests
+beautifulsoup4

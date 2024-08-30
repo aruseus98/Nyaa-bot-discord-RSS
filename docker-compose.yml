@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  nyaa-bot-rss:
+    build: .
+    container_name: nyaa-bot-rss
+    volumes:
+      - nyaa_data:/app/last_entry
+      - nyaa_data:/app/state
+      - ./urls:/app/urls
+    environment:
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - DISCORD_CHANNEL_ID=${DISCORD_CHANNEL_ID}
+      - DEBUG_MODE=${DEBUG_MODE}
+    restart: always
+
+volumes:
+  nyaa_data:
